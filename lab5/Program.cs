@@ -14,8 +14,8 @@ namespace lab5
             try
             {
                 Handler h1 = new ConcreteHandler1_FaQ();
-                Handler h2 = new ConcreteHandler2();
-                Handler h3 = new ConcreteHandler3();
+                Handler h2 = new ConcreteHandler2_Oper();
+                Handler h3 = new ConcreteHandler3_eng();
                 h1.Successor = h2;
                 h2.Successor = h3;
                 int k;
@@ -37,6 +37,7 @@ namespace lab5
                 Console.WriteLine(ex.Message);
             }
         }
+        
     }
     /// <summary>
     /// абстрактный класс для всех обработчиков
@@ -85,7 +86,7 @@ namespace lab5
     /// <summary>
     /// класс второй ситуации, обращение к оператору
     /// </summary>
-    class ConcreteHandler2 : Handler
+    class ConcreteHandler2_Oper : Handler
     {
         public override void HandleRequest(int condition)
         {
@@ -114,7 +115,7 @@ namespace lab5
     /// <summary>
     /// класс обработки третей ситуации, обращение к инженеру
     /// </summary>
-    class ConcreteHandler3 : Handler
+    class ConcreteHandler3_eng : Handler
     {
         public override void HandleRequest(int condition)
         {
